@@ -1,0 +1,22 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="phonegapCamera" label="Camera button" enabled="TRUE">
+		<fed:fce.field.input name="button.text" label="Button text" eval="trim" />
+		<fed:fce.field.group name="button.link" label="Link" internalType="db" allowed="pages" minItems="1" maxItems="1" size="1" />
+		<fed:fce.field.select name="button.icon" label="Icon" items="{0: {0: 'arrow-l', 1: 'Arrow left'}, 1: {0: 'arrow-r', 1: 'Arrow right'}}" />
+		<fed:fce.field.select name="button.iconPos" label="Icon pos" items="{0: {0: 'left', 1: 'Left'}, 1: {0: 'right', 1: 'Right'}, 2: {0: 'top', 1: 'Top'}, 1: {0: 'bottom', 1: 'Bottom'}, 1: {0: 'notext', 1: 'No text'}}" />
+		<fed:fce.field.select name="button.rel" label="Use popup" items="{0: {0: '', 1: 'No'}, 1: {0: 'popup', 1: 'Yes'}}" />
+		<fed:fce.field.select name="button.transition" label="Transition" items="{0: {0: '', 1: 'None'}, 1: {0: 'slide', 1: 'Slide'}, 1: {0: 'slideup', 1: 'Slide up'}, 1: {0: 'slidedown', 1: 'Slide down'}, 1: {0: 'pop', 1: 'Pop'}, 1: {0: 'fade', 1: 'Fade'}, 1: {0: 'flip', 1: 'Flip'}}" />
+		<fed:fce.field.checkbox name="button.inline" label="Show inline"  />
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+ {button.text} 
+</f:section>
+ 
+<f:section name="Main">
+	<a href="?id={button.link}" data-role="button" data-icon="{button.icon}" data-iconpos="{button.iconPos}" data-rel="{button.rel}" data-transition="{button.transition}" data-inline="{button.inline}">{button.text}</a>
+</f:section>
