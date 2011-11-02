@@ -23,7 +23,7 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-                                                                    */
+
 
 /* This view helper implements Phonegap success class.
  * 
